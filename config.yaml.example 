@@ -1,0 +1,54 @@
+# Shodan API配置
+api:
+  key: ""
+  base_url: "https://api.shodan.io"
+  timeout: 120
+  pool_connections: 20
+  pool_maxsize: 20
+  connect_timeout: 5
+  read_timeout: 30
+
+# 搜索配置
+search:
+  query: "org:’Uber’”  # 修改查询语法
+  limit: 100
+
+# CVE API配置
+cve:
+  base_url: "https://services.nvd.nist.gov/rest/json/cve/1.0"
+  timeout: 30
+
+# OpenAI配置
+openai:
+  api_key: ""
+  base_url: "https://yunwu.ai/v1"  # 使用中转API
+  model: "gpt-3.5-turbo"  # 可选，指定模型
+
+# GitHub配置
+github:
+  token: ""  # 添加你的GitHub token
+  timeout: 30
+
+# NVD API配置
+nvd:
+  api_key: ""  # 从 https://nvd.nist.gov/developers/request-an-api-key 获取
+  rate_limit: 50  # 每30秒的请求限制
+  batch_size: 10  # 批量请求大小
+  concurrent_requests: 5  # 并发请求数
+  cache_ttl: 86400  # 缓存时间（秒）
+
+# 输出配置
+output:
+  csv_headers:
+    - IP
+    - 端口
+    - 主机名
+    - 组件
+    - 版本
+    - CVE编号
+    - CVE描述
+    - 严重程度
+    - 发布日期
+    - 国家
+    - 标签
+    - 时间戳
